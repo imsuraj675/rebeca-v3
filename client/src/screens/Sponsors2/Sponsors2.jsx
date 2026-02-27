@@ -3,8 +3,9 @@ import Button from "../../components/Button/Button";
 import WhySponsorBento from "../../components/WhySponsorBento/WhySponsorBento";
 import SponsorSkillTree from "../../components/SponsorSkillTree/SponsorSkillTree";
 import "./Sponsors2.css";
-import SponsorsScroll from "../../components/SponsorsScroll/SponsorsScroll";
 import spdata from "../../assets/data/pastSponsors.json";
+import SponsorsMarquee from "../../components/SponsorsMarquee/SponsorsMarquee";
+import SponsorsCategory from "../../components/SponsorCat/SponsorCat";
 
 
 const Sponsors2 = () => {
@@ -17,11 +18,14 @@ const Sponsors2 = () => {
                     four days of absolute ecstasy, where the nostalgia of one of the country’s most profound alumni
                     bases meets the vibrant energy of today's brightest engineering minds.
                 </p>
-                <Button innerText={"Download Brochure"} />
+                <Button innerText={"Download Brochure"} onClick={()=>window.open("https://drive.google.com/file/d/1CcQnU8Ym7DINlCEpHgcso7H9nc8QuuEi/view?usp=sharing", "_blank")} />
+                <div className="backdrop">
+                    <img src="/assets/imgs/sponsorship/backdrop-start.png" />
+                </div>
             </section>
             <section>
                 <h2>Past Sponsors</h2>
-                <SponsorsScroll data ={spdata} />
+                <SponsorsMarquee sponsorsList={spdata}/>
             </section>
             <section className="college">
                 <h1>Lets start with a little about our College</h1>
@@ -56,7 +60,7 @@ const Sponsors2 = () => {
 
             <section>
                 <h1>Sponsor Categories</h1>
-                <SponsorSkillTree />
+                <SponsorsCategory />
             </section>
         </section>
     );

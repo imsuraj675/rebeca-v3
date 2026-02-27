@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./screens/Home/Home";
 import Schedule from "./screens/Schedule/Schedule";
-import Sponsorship from "./screens/Sponsors/Sponsorship";
+// import Sponsorship from "./screens/Sponsors/Sponsorship";
 
 // import Daydetails from "./screens/Daydetails/Daydetails";
 import Merchandise from "./screens/Merchandise/Merchandise";
@@ -29,14 +29,14 @@ const AllRoutes = () => {
             <Route exact path="/events" element={<Schedule />} />
             {/* <Route exact path="/events/day/:DayID" element={<Daydetails />} />*/}
             <Route exact path="/events/:eventSlug" element={<EventSingle />} /> 
-            <Route exact path="/sponsorship" element={<Sponsorship />} />
+            {/* <Route exact path="/sponsorship" element={<Sponsorship />} /> */}
             <Route exact path="/team" element={<Team />} />
             {/* <Route exact path="/merchandise" element={<Merchandise />} /> */}
             <Route exact path="/merchandise" element={<ComingSoon />} />
             <Route exact path="/userUpdate" element={<ProfileDashboard />} />
             {/* <Route exact path="/events/:eventSlug/register" element={<EventReg />} /> */}
             <Route exact path="/*" element={<PageNotFound />} />
-            <Route exact path="/sponsors2" element={<Sponsors2 />} />
+            <Route exact path="/sponsorship" element={<Sponsors2 />} />
         </Routes>
     );
 };

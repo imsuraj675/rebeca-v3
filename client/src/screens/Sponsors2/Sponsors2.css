@@ -13,8 +13,16 @@
     align-items: center;
     flex-direction: column;
     gap: 1.2rem;
-    width: 100%;
     padding: 1.2rem;
+    width: 100%;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.sponsors2 section h2 {
+    font-size: 3rem;
+    color: #ffffff77;
 }
 
 .sponsors2 section h1, .sponsors2 section h2 {
@@ -23,9 +31,28 @@
     width: 100%;
 }
 
-.sponsors2 section p {
-    font-size: 1.2rem;
+.sponsors2 section h1 {
+    font-size: 5rem;
 }
+
+.sponsors2 section p {
+    font-size: 1.5rem;
+    color: #ffffff89;
+}
+
+.sponsors2 .intro .backdrop {
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.5;
+}
+
+.sponsors2 .intro .backdrop img {
+    height: 500px;
+}
+
+
 
 .sponsors2 .intro p {
     width: min(100%, 45ch);
@@ -36,6 +63,8 @@
     align-items: start;
     position: relative;
     z-index: 1;
+    min-height: 600px;
+    width: min(100%, 1000px);
 }
 
 .sponsors2 .college h1 {
@@ -45,17 +74,18 @@
 }
 
 .sponsors2 .college .left {
-    width: min(40ch, 100%);
+    width: min(50ch, 100%);
     flex-shrink: 0;
     z-index: 2;
+    padding-top: 2rem;
 }
 
 .sponsors2 .college .right {
     position: absolute;
     z-index: 0;
-    width: 300px;
+    width: 500px;
     right: 0;
-    top: 0;
+    bottom: 0;
 }
 
 .sponsors2 .college .right img {
@@ -68,4 +98,18 @@
     background-repeat: no-repeat;
     background-position: bottom;
     min-height: 400px;
+}
+
+.sponsors2 .about-rebeca p {
+    width: min(100%, 1000px);
+}
+
+@media only screen and (max-width: 450px) {
+    .sponsors2 section p {
+        font-size: 1.2rem;
+    }
+
+    .sponsors2 section h1 {
+        font-size: 3rem;
+    } 
 }
