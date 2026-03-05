@@ -34,7 +34,7 @@ const Home = () => {
                 <img src="/assets/imgs/home/wavy_bg.webp" alt="" />
             </div>
             <Hero />
-            <section className="section-2">
+            <section className="section-2" id="are-you-ready">
                 <div className="banner">
                     <div className="">BEings, are you ready?</div>
                     <div className="">the countdown to our very own Pujo has already begun!</div>
