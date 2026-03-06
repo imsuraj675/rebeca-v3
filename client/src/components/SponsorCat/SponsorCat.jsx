@@ -106,7 +106,7 @@ export default function SponsorsCategory() {
                             m: 0,
                         }}
                     >
-                        PERKS & BENEFITS
+                        Perks & Benefits
                     </Typography>
                 </Divider>
 

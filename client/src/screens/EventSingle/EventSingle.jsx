@@ -115,22 +115,29 @@ const EventSingle = () => {
                                 <span className="event-single-badge">{oneEvent?.type}</span>
                             )}
                             <h1 className="event-single-title">{oneEvent?.name}</h1>
-                            {oneEvent?.type !== 'performance' && <ButtonGroup variant="contained" size="large">
-                                {userRegs.includes(eventSlug) ? (
-                                    <Button startIcon={<CheckCircleRounded />} color="success">
-                                        Registered
-                                    </Button>
-                                ) : (
-                                    <Button startIcon={<Person2Rounded />} onClick={() => navigate("register")}>
-                                        Register
-                                    </Button>
-                                )}
-                                {oneEvent?.rulesdoc && (
-                                    <Button endIcon={<GavelIcon />} href={oneEvent?.rulesdoc || "rulesdoc"} color="warning" target="_blank">
-                                        View Rules
-                                    </Button>
-                                )}
-                            </ButtonGroup>}
+                            {oneEvent?.type !== "performance" && (
+                                <ButtonGroup variant="contained" size="large">
+                                    {userRegs.includes(eventSlug) ? (
+                                        <Button startIcon={<CheckCircleRounded />} color="success">
+                                            Registered
+                                        </Button>
+                                    ) : (
+                                        <Button startIcon={<Person2Rounded />} onClick={() => navigate("register")}>
+                                            Register
+                                        </Button>
+                                    )}
+                                    {oneEvent?.rulesdoc && (
+                                        <Button
+                                            endIcon={<GavelIcon />}
+                                            href={oneEvent?.rulesdoc || "rulesdoc"}
+                                            color="warning"
+                                            target="_blank"
+                                        >
+                                            View Rules
+                                        </Button>
+                                    )}
+                                </ButtonGroup>
+                            )}
                             <div className="eposter-mobile">
                                 {oneEvent?.regfee ? <div className="regfee">Fee ₹ {oneEvent.regfee}</div> : <></>}
                                 <img src={oneEvent.poster} alt={"Poster"} />
@@ -209,7 +216,9 @@ const EventSingle = () => {
                         {oneEvent?.rounds?.map((round, i) => {
                             return (
                                 <RoundCard
-                                    name={round.roundname || round.name || `Round ${i + 1}`}
+                                    name={
+                                        (oneEvent.type === "performance" ? "Details" : `Round ${i + 1}`)
+                                    }
                                     start={extractFullDate(round.start || round.startTime || oneEvent.startTime)}
                                     end={extractFullDate(round.end || round.endTime || "")}
                                     venue={round.venue}

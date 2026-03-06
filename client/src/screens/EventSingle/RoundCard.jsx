@@ -16,7 +16,7 @@ export default function RoundCard({ name, start, end, venue, i, hideHeading }) {
                         elevation={5}
                     >
                         <Typography gutterBottom sx={{ color: "#4dabf5", fontSize: 14, my: 0 }}>
-                            {`Round ${i + 1}`}
+                            {name}
                         </Typography>{" "}
                         {/* <Tooltip title={name}>
                             <Typography fontSize={24} fontWeight={800} lineHeight={1}>
