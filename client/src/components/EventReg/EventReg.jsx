@@ -172,8 +172,7 @@ export default function EventRegister() {
     
         // 3. Team Members & Phone Validation
         // 3.1 Team member length validation
-        var teamLen = formData.teamMem.length;
-        if(teamLen === 0) teamLen++; // To denote user is the lone member
+        var teamLen = formData.teamMem.length+1; // +1 to account for the user themselves
         if (teamLen < curEvent.minTeamSize || teamLen > curEvent.maxTeamSize) {
             tempErrors.teamMem = `Team Members must be within ${curEvent.minTeamSize} and ${curEvent.maxTeamSize}`
         }
