@@ -93,7 +93,7 @@ exports.logout = (req, res) => {
     res.status(200).json({ status: "success" });
 };
 
-//verifying admin passkey
+//verifying admin passkey 
 exports.verifyPasskey = catchAsync(async (req, res, next) => {
     const { passkey } = req.body;
 
