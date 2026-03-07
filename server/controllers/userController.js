@@ -66,7 +66,7 @@ exports.updateUser = catchAsync(async (req, res, next) => {
         console.log("Error during user update:", err);
         res.status(500).json({
             status: "error",
-            message: err.message || "An error occurred while updating the admin profile.",
+            message: err || "An error occurred while updating the admin profile.",
         });
     }
 });
