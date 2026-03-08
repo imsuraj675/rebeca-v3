@@ -116,7 +116,8 @@ const ProfileDashboard = () => {
 
 
         } catch (err) {
-            const detailed = err?.response?.data?.message || err.message;
+            console.log("Errr: ", err)
+            const detailed = err?.response?.data?.message?.message || err.message;
             showToast("Error", detailed, "error");
         } finally {
             setLoading(false);

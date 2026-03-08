@@ -185,8 +185,8 @@ export default function EventRegister() {
 
             // Team Size & Members
             const teamLen = formData.teamMem.length + 1;
-            if (curEvent?.type === "team" && (teamLen < curEvent.minTeamSize || teamLen > curEvent.maxTeamSize)) {
-                tempErrors.teamMem = `Team must be between ${curEvent.minTeamSize} and ${curEvent.maxTeamSize} members`;
+            if (curEvent?.type === "team" && (teamLen < curEvent?.minTeamSize || teamLen > curEvent?.maxTeamSize)) {
+                tempErrors.teamMem = `Team must be between ${curEvent?.minTeamSize} and ${curEvent?.maxTeamSize} members`;
             }
 
             const phoneRegex = /^[6-9]\d{9}$/;
@@ -227,7 +227,7 @@ export default function EventRegister() {
             return;
         }
         // Step 1 -> 2 Validation
-        if (curEvent.type === "team" && activeStep === 1 && !validate()) {
+        if (curEvent?.type === "team" && activeStep === 1 && !validate()) {
             Object.entries(errors).forEach(([key, value]) => {
                 showNotification(`${key}: ${value}`, "error");
             });
@@ -326,7 +326,7 @@ export default function EventRegister() {
                         <Typography variant="h6" sx={{ mb: 3 }}>
                             Team Registration
                         </Typography>
-                        {curEvent.type === "team" && (
+                        {curEvent?.type === "team" && (
                             <TextField
                                 fullWidth
                                 label="Team Name"
@@ -338,7 +338,7 @@ export default function EventRegister() {
                                 sx={{ mb: 3 }}
                             />
                         )}
-                        {curEvent.type === "team" && (
+                        {curEvent?.type === "team" && (
                             <>
                                 <Typography variant="subtitle1" fontWeight="bold">
                                     Team Members
@@ -372,9 +372,9 @@ export default function EventRegister() {
                             </>
                         )}
 
-                        {curEvent.asset && (
+                        {curEvent?.asset && (
                             <>
-                                <Typography variant="body1">{curEvent.asset || "Upload"}</Typography>
+                                <Typography variant="body1">{curEvent?.asset || "Upload"}</Typography>
                                 <Typography variant="caption">
                                     Make sure to set the access to 'anyone with the link'
                                 </Typography>
@@ -392,7 +392,7 @@ export default function EventRegister() {
                             </>
                         )}
 
-                        {!curEvent.asset && curEvent.type !== "team" && (
+                        {!curEvent?.asset && curEvent?.type !== "team" && (
                             <Alert color="secondary">
                                 <AlertTitle>Team & Asset details is not required</AlertTitle>
                                 All the data we need is pre-filled, event doesn't require team registrations or Asset
@@ -409,7 +409,7 @@ export default function EventRegister() {
                             <>
                                 <Typography variant="h6">Payment Details</Typography>
                                 <Typography variant="body2" sx={{ my: 2 }}>
-                                    Scan QR to pay <b>₹{curEvent?.regfee}</b> for <b>{curEvent.name}</b>
+                                    Scan QR to pay <b>₹{curEvent?.regfee}</b> for <b>{curEvent?.name}</b>
                                 </Typography>
                                 <img
                                     src={`/assets/payment-qr.webp`}
@@ -439,7 +439,7 @@ export default function EventRegister() {
                         ) : (
                             <Alert color="secondary">
                                 <AlertTitle>No Payment needed</AlertTitle>
-                                {curEvent.regfee === 0
+                                {curEvent?.regfee === 0
                                     ? "Event needs no Payment to register"
                                     : "Registration is Free for IIESTians"}
                             </Alert>
