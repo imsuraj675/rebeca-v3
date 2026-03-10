@@ -37,6 +37,7 @@ export default function AccountMenu() {
 
     const handleSuccess = (response) => {
         handleLoginSuccess(response);
+        handleClose()
         setTimeout(() => navigate("/"), 500);
     };
 

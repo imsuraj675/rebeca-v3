@@ -65,7 +65,6 @@ const Team = () => {
         allTeams && (
             <div className="team">
                 <Heading title={"MEET OUR TEAM"}/>
-                <ProfessorsList />
                 <Box sx={{
                     display: "flex",
                     alignItems: "center",
@@ -76,9 +75,9 @@ const Team = () => {
                     borderRadius: "5px"
                 }}>
                     <Typography textAlign={"center"} sx={{fontSize: "1.2rem", maxWidth: '70ch', fontFamily: 'var(--body-font)'}} color="text.secondary">
-                    We are excited to invite you to be a part of REBECA as a <b>volunteer</b>! This is your chance to contribute, gain hands-on experience, and be a part of an incredible event. Whether you're interested in event management, social media, technical support, or hospitality, there's a place for you on our team!
+                    Meet the diverse teams behind Rebeca — a collective of passionate students across various domains, working alongside our respected professors. Each team plays a vital role in shaping the fest, bringing together creativity, coordination, and dedication to deliver a seamless and memorable experience for everyone who takes part in the celebration.
                     </Typography>
-                    <Button
+                    {/* <Button
                         size="large"
                         variant="contained"
                         startIcon={<Favorite />}
@@ -88,8 +87,9 @@ const Team = () => {
                         color="secondary"
                     >
                         Join as Volunteer
-                    </Button>
+                    </Button> */}
                 </Box>
+                <ProfessorsList />
                 <Container className="team-container">
                     {allTeams.map((teamData, i) => {
                         if (teamData.members.length === 0) return;
